@@ -29,8 +29,6 @@ header span {
 }
 
 body {
-    /* margin: 40px; */
-    /* font-family: "Adobe Caslon Pro", "Minion Pro", serif; */
     font-family: sans-serif;
     font-size: 11pt;
 }
@@ -44,23 +42,23 @@ section h2 {
     font-size: 12pt;
 }
 
-.jobheader {
+.stationheader {
     width: 100%;
     border-bottom: 1px solid black;
     margin-left: 20px;
 }
 
-.jobtitlerow {
+.stationtitlerow {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.employerrow {
+.stationplacerow {
     width: 100%;
     font-size: 9pt;
 }
 
-.jobtitle {
+.stationtitle {
     font-style: italic;
 }
