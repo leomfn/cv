@@ -1,12 +1,16 @@
 import json
+from math import ceil
 from lxml import html, etree
-from lxml.html.builder import UL, LI, DIV, SPAN, CLASS
+from lxml.html.builder import P, UL, LI, DIV, SPAN, CLASS
 
 with open("employment.json", encoding="utf-8") as f:
     jobs = json.load(f)
 
 with open("education.json", encoding="utf-8") as f:
     edu = json.load(f)
+
+with open("skills.json", encoding="utf-8") as f:
+    skills = json.load(f)
 
 
 def job2html(job: dict = None):
@@ -51,6 +55,20 @@ def edu2html(edu: dict = None):
     return eduinfo, edudesc
 
 
+def skill2html(skill: dict = None) -> html.HtmlElement:
+    skillset = DIV(CLASS("skillset"))
+    skillset.append(P(skill, CLASS("skilltitle")))
+    skilllist = UL(CLASS("skilllist"))
+    for key, value in skills[skill].items():
+        skillentry = LI(CLASS("skillentry"))
+        skillentry.append(SPAN(key, CLASS("skillname")))
+        if len(value) > 0:
+            skillentry.append(SPAN(f": {', '.join(value)}", CLASS("skilldesc")))
+        skilllist.append(skillentry)
+    skillset.append(skilllist)
+    return skillset
+
+
 employment = html.parse("print.html")
 
 for element in employment.iter():
@@ -65,6 +83,33 @@ for element in employment.iter():
                 eduinfo, edudesc = edu2html(e)
                 element.append(eduinfo)
                 element.append(edudesc)
+        elif element.attrib["id"] == "skills":
+            nrows = ceil(len(skills.keys())/2)
+            skillrows = [DIV(CLASS("skillrow")) for i in range(nrows)]
+            # DIV(CLASS("skillrow"))
+            # len(skillrows)
+            i = 0
+            for s in skills:
+                
+                # if i == 1:
+                # skillrow = DIV(CLASS("skillrow"))
+                # if i == 2:
+                #     skillrows.append(DIV(CLASS("skillrow")))
+                #     i = 1
+                skillset = skill2html(s)
+                skillrows[i].append(skillset)
+                # print(len(skillset))
+                # if i == 2:
+                    # skillrows = skillrows.append()
+                    # element.append(skillrow)
+                    # print("skillrow appended")
+                    # print(type(DIV()))
+                    # i = 1
+                if len(skillrows[i]) == 2:
+                    i += 1
+            for r in skillrows:
+                element.append(r)
+                
 
 # print(etree.tostring(employment, pretty_print=True).decode())
 

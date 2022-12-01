@@ -6,9 +6,16 @@
     }
 } */
 
+/* colors:
+grey #454d66
+green #309975
+lighter green #58b368
+yellow #dad873
+lighter yellow #efeeb4 */
+
 @page {
     size: A4;
-    margin: 40px;
+    /* margin: 40px; */
     @bottom-right{
         content: "Seite " counter(page) " von " counter(pages);
     }
@@ -30,7 +37,7 @@ header span {
 
 body {
     font-family: sans-serif;
-    font-size: 11pt;
+    font-size: 10pt;
 }
 
 a {
@@ -56,9 +63,41 @@ section h2 {
 
 .stationplacerow {
     width: 100%;
-    font-size: 9pt;
+    font-size: 8pt;
 }
 
 .stationtitle {
     font-style: italic;
+}
+
+.skillrow {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .skillset {
+
+} */
+
+.skillset > ul {
+    /* margin-left: 0; */
+    padding-left: 20px;
+}
+
+/* .skilltitle {
+
+} */
+
+.skillentry {
+    /* white-space: pre; */
+    font-style: italic;
+    /* margin-left: 0px; */
+}
+
+.skilldesc {
+    font-style: normal;
+}
+
+.skillname {
+    background-color: #efeeb4;
 }
