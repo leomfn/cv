@@ -1,8 +1,23 @@
 <!DOCTYPE html>
+
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Lebenslauf $NAME</title>
+        <link href="resume.css" rel="stylesheet">
+    </head>
 <body>
-    <div>
-        <p id="name">Leo Fuhrmann</p>
-    </div>
+    <header id="info">
+        <h1>$NAME</h1>
+        <span>${ADDRESS_STREET}, ${ADDRESS_CITY} &bull;
+            <a href="mailto:${EMAIL}">${EMAIL}</a> &bull;
+            ${PHONE}</span>
+    </header>
+    <section id="employment">
+        <h2>Berufserfahrung</h2>
+    </section>
+    <section id="education">
+        <h2>Studium</h2>
+    </section>
 </body>
 </html>
