@@ -11,13 +11,13 @@ def job2html(job: dict = None):
         DIV(
             SPAN(job["position"], CLASS("jobtitle")),
             SPAN(job["timeframe"], CLASS("right")),
-            CLASS("tablerow")
+            CLASS("jobtitlerow")
             ),
         DIV(
             SPAN(job["employer"]),
-            CLASS("tablerow")
+            CLASS("employerrow")
         ),
-        CLASS("jobtable")
+        CLASS("jobheader")
         )
     jobtasks = DIV()
     tasks = UL(CLASS("jobtasks"))
