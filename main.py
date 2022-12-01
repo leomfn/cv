@@ -1,6 +1,6 @@
 import json
 from lxml import html, etree
-from lxml.html.builder import E, UL, LI, DIV, SPAN, CLASS
+from lxml.html.builder import UL, LI, DIV, SPAN, CLASS
 
 with open("employment.json", encoding="utf-8") as f:
     jobs = json.load(f)
@@ -41,4 +41,3 @@ for element in employment.iter():
 
 with open("print.html", "w", encoding="utf-8") as f:
     f.write(etree.tostring(employment, pretty_print=True).decode())
-
