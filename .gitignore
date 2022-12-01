@@ -1,1 +1,6 @@
 *.pdf
+.env
+*.json
+!*.test*
+print.html
+*.pyc
