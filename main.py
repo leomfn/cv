@@ -13,6 +13,9 @@ with open("education.json", encoding="utf-8") as f:
 with open("skills.json", encoding="utf-8") as f:
     skills = json.load(f)
 
+with open("hobbies.json", encoding="utf-8") as f:
+    hobbies = json.load(f)
+
 
 def job2html(job: dict = None):
     jobbox = DIV(CLASS("jobbox"))
@@ -85,8 +88,14 @@ for element in employment.iter():
                     i += 1
             for r in skillrows:
                 element.append(r)
+        elif element.attrib["id"] == "hobbies":
+            hobbylist = UL(CLASS("hobbylist"))
+            for h in hobbies["hobbies"]:
+                hobbylist.append(LI(h))
+            element.append(hobbylist)
+            
 
-printstring = re.sub(r"\[(\w+)\]", r"<mark>\1</mark>",
+printstring = re.sub(r"\[(\w+)\]", r"<highlight>\1</highlight>",
                      etree.tostring(employment, pretty_print=True).decode())
 
 with open("print.html", "w", encoding="utf-8") as f:

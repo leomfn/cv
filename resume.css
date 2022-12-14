@@ -34,8 +34,8 @@ header {
 
 header h1 {
     font-size: 16pt;
-    border-bottom: 1px solid black;
-    margin-bottom: 4px;
+    /* border-bottom: 8px solid cyan; */
+    /* margin-bottom: 10px; */
 }
 
 header span {
@@ -56,27 +56,44 @@ section h2 {
     font-size: 12pt;
 }
 
+ul {
+    padding-left: 20px;
+}
+
 li:not(:last-child) { 
-    margin-bottom: 4px;  
+    margin-bottom: 4px;
  }
+
+.titleruler {
+    border: 3px solid cyan;
+    margin-left: 0;
+    width: 1in;
+}
 
 .jobbox {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+}
+
+.jobbox:not(:last-child) {
     margin-bottom: 0.2in;
 }
 
 .jobinfo {
     flex: 0 0 2in;
+    /* margin-right: 1in; */
+    /* padding-right: 1in;; */
 }
 
 .jobdescription {
     flex: 0 0 4in;
+    padding-left: 0.5in;
 }
 
-.jobtasklist {
+/* .jobtasklist {
     padding-left: 15px;
-}
+} */
 
 /* .stationheader {
     width: 100%;
@@ -121,10 +138,9 @@ li:not(:last-child) {
 
 } */
 
-.skillset > ul {
-    /* margin-left: 0; */
+/* .skillset > ul {
     padding-left: 20px;
-}
+} */
 
 .skilltitle {
     font-style: italic;
@@ -134,14 +150,27 @@ li:not(:last-child) {
     font-style: italic;
 } */
 
-.skilldesc {
+/* .skilldesc {
     font-style: normal;
-}
+} */
 
 /* .skillname {
     background-color: #efeeb4;
 } */
 
-mark {
-    background-color: yellow;
+highlight {
+    position: relative;
+}
+
+highlight::before {
+    background-color: magenta;
+    content: "";
+    position: absolute;
+    height: 120%;
+    width: 100%;
+    padding: 0 0.3em;
+    left: -0.3em;
+    opacity: 0.2;
+    z-index: -1;
+    transform: rotate(-3deg) skewX(-3deg);
 }
