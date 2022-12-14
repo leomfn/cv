@@ -33,6 +33,23 @@ def job2html(job: dict = None):
 
 
 def edu2html(edu: dict = None):
+    edubox = DIV(CLASS("jobbox"))
+
+    eduinfo = DIV(CLASS("jobinfo"))
+    eduinfo.append(DIV(edu["institute"], CLASS("institute")))
+    eduinfo.append(DIV(edu["timeframe"], CLASS("timeframe")))
+    edubox.append(eduinfo)
+
+    edudescription = DIV(CLASS("jobdescription"))
+    edudescription.append(DIV(edu["program"], CLASS("stationtitle")))
+    edutasks = UL(CLASS("jobtasklist"))
+    for t in edu["description"]:
+        edutasks.append(LI(t))
+    edudescription.append(edutasks)
+    edubox.append(edudescription)
+    return edubox
+    
+    
     eduinfo = DIV(
         DIV(
             SPAN(edu["program"], CLASS("stationtitle")),
@@ -76,9 +93,10 @@ for element in employment.iter():
                 element.append(job2html(j))
         elif element.attrib["id"] == "education":
             for e in edu:
-                eduinfo, edudesc = edu2html(e)
-                element.append(eduinfo)
-                element.append(edudesc)
+                element.append(edu2html(e))
+                # eduinfo, edudesc = edu2html(e)
+                # element.append(eduinfo)
+                # element.append(edudesc)
         elif element.attrib["id"] == "skills":
             nrows = ceil(len(skills.keys())/2)
             skillrows = [DIV(CLASS("skillrow")) for i in range(nrows)]

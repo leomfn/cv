@@ -109,7 +109,11 @@ li:not(:last-child) {
 
 .skillrow {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+}
+
+.skillset {
+    flex: 0 0 3.5in;
 }
 
 /* .skillset {
