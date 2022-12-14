@@ -1,4 +1,5 @@
 import json
+import re
 from math import ceil
 from lxml import html, etree
 from lxml.html.builder import P, UL, LI, DIV, SPAN, CLASS
@@ -94,6 +95,9 @@ for element in employment.iter():
                     i += 1
             for r in skillrows:
                 element.append(r)
-                
+
+printstring = re.sub(r"\[(.*)\]", r"<mark>\1</mark>",
+                     etree.tostring(employment, pretty_print=True).decode())
+
 with open("print.html", "w", encoding="utf-8") as f:
-    f.write(etree.tostring(employment, pretty_print=True).decode())
+    f.write(printstring)

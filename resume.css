@@ -106,3 +106,7 @@ section h2 {
 /* .skillname {
     background-color: #efeeb4;
 } */
+
+mark {
+    background-color: yellow;
+}
