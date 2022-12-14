@@ -86,7 +86,7 @@ for element in employment.iter():
             for r in skillrows:
                 element.append(r)
 
-printstring = re.sub(r"\[(.*)\]", r"<mark>\1</mark>",
+printstring = re.sub(r"\[(\w+)\]", r"<mark>\1</mark>",
                      etree.tostring(employment, pretty_print=True).decode())
 
 with open("print.html", "w", encoding="utf-8") as f:
