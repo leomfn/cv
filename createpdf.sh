@@ -13,7 +13,8 @@ PDFFILE="resume.pdf"
 (envsubst < $HTMLFILE) > print.html
 
 # Run Python to insert content
-python main.py
+source ./.venv/bin/activate
+python3 main.py
 
 # Create PDF
 weasyprint print.html $PDFFILE
