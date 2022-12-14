@@ -86,32 +86,14 @@ for element in employment.iter():
         elif element.attrib["id"] == "skills":
             nrows = ceil(len(skills.keys())/2)
             skillrows = [DIV(CLASS("skillrow")) for i in range(nrows)]
-            # DIV(CLASS("skillrow"))
-            # len(skillrows)
             i = 0
             for s in skills:
-                
-                # if i == 1:
-                # skillrow = DIV(CLASS("skillrow"))
-                # if i == 2:
-                #     skillrows.append(DIV(CLASS("skillrow")))
-                #     i = 1
                 skillset = skill2html(s)
                 skillrows[i].append(skillset)
-                # print(len(skillset))
-                # if i == 2:
-                    # skillrows = skillrows.append()
-                    # element.append(skillrow)
-                    # print("skillrow appended")
-                    # print(type(DIV()))
-                    # i = 1
                 if len(skillrows[i]) == 2:
                     i += 1
             for r in skillrows:
                 element.append(r)
                 
-
-# print(etree.tostring(employment, pretty_print=True).decode())
-
 with open("print.html", "w", encoding="utf-8") as f:
     f.write(etree.tostring(employment, pretty_print=True).decode())
