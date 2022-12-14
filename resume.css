@@ -95,16 +95,17 @@ li:not(:last-child) {
     font-size: 8pt;
 }
 
-.stationtitle {
+/* .stationtitle {
     font-style: italic;
-}
+} */
 
 .timeframe {
     color: grey;
 }
 
-.institute {
+.station {
     margin-bottom: 6px;
+    font-style: italic;
 }
 
 .skillrow {
@@ -129,11 +130,9 @@ li:not(:last-child) {
 
 } */
 
-.skillentry {
-    /* white-space: pre; */
+/* .skillentry {
     font-style: italic;
-    /* margin-left: 0px; */
-}
+} */
 
 .skilldesc {
     font-style: normal;

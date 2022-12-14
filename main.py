@@ -18,7 +18,7 @@ def job2html(job: dict = None):
     jobbox = DIV(CLASS("jobbox"))
 
     jobinfo = DIV(CLASS("jobinfo"))
-    jobinfo.append(DIV(job["employer"], CLASS("institute")))
+    jobinfo.append(DIV(job["employer"], CLASS("station")))
     jobinfo.append(DIV(job["timeframe"], CLASS("timeframe")))
     jobbox.append(jobinfo)
 
@@ -36,7 +36,7 @@ def edu2html(edu: dict = None):
     edubox = DIV(CLASS("jobbox"))
 
     eduinfo = DIV(CLASS("jobinfo"))
-    eduinfo.append(DIV(edu["institute"], CLASS("institute")))
+    eduinfo.append(DIV(edu["institute"], CLASS("station")))
     eduinfo.append(DIV(edu["timeframe"], CLASS("timeframe")))
     edubox.append(eduinfo)
 
@@ -48,26 +48,6 @@ def edu2html(edu: dict = None):
     edudescription.append(edutasks)
     edubox.append(edudescription)
     return edubox
-    
-    
-    eduinfo = DIV(
-        DIV(
-            SPAN(edu["program"], CLASS("stationtitle")),
-            SPAN(edu["timeframe"]),
-            CLASS("stationtitlerow")
-            ),
-        DIV(
-            SPAN(edu["institute"]),
-            CLASS("stationplacerow")
-        ),
-        CLASS("stationheader")
-        )
-    edudesc = DIV()
-    desc = UL(CLASS("stationdesc"))
-    for e in edu["description"]:
-        desc.append(LI(e))
-    edudesc.append(desc)
-    return eduinfo, edudesc
 
 
 def skill2html(skill: dict = None) -> html.HtmlElement:
@@ -94,9 +74,6 @@ for element in employment.iter():
         elif element.attrib["id"] == "education":
             for e in edu:
                 element.append(edu2html(e))
-                # eduinfo, edudesc = edu2html(e)
-                # element.append(eduinfo)
-                # element.append(edudesc)
         elif element.attrib["id"] == "skills":
             nrows = ceil(len(skills.keys())/2)
             skillrows = [DIV(CLASS("skillrow")) for i in range(nrows)]
