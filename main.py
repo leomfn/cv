@@ -15,24 +15,21 @@ with open("skills.json", encoding="utf-8") as f:
 
 
 def job2html(job: dict = None):
-    jobinfo = DIV(
-        DIV(
-            SPAN(job["position"], CLASS("stationtitle")),
-            SPAN(job["timeframe"]),
-            CLASS("stationtitlerow")
-            ),
-        DIV(
-            SPAN(job["employer"]),
-            CLASS("stationplacerow")
-        ),
-        CLASS("stationheader")
-        )
-    jobtasks = DIV()
-    tasks = UL(CLASS("stationdesc"))
+    jobbox = DIV(CLASS("jobbox"))
+
+    jobinfo = DIV(CLASS("jobinfo"))
+    jobinfo.append(DIV(job["employer"], CLASS("institute")))
+    jobinfo.append(DIV(job["timeframe"], CLASS("timeframe")))
+    jobbox.append(jobinfo)
+
+    jobdescription = DIV(CLASS("jobdescription"))
+    jobdescription.append(DIV(job["position"], CLASS("stationtitle")))
+    jobtasks = UL(CLASS("jobtasklist"))
     for t in job["description"]:
-        tasks.append(LI(t))
-    jobtasks.append(tasks)
-    return jobinfo, jobtasks
+        jobtasks.append(LI(t))
+    jobdescription.append(jobtasks)
+    jobbox.append(jobdescription)
+    return jobbox
 
 
 def edu2html(edu: dict = None):
@@ -76,9 +73,7 @@ for element in employment.iter():
     if element.tag == "section":
         if element.attrib["id"] == "employment":
             for j in jobs:
-                jobinfo, jobtasks = job2html(j)
-                element.append(jobinfo)
-                element.append(jobtasks)
+                element.append(job2html(j))
         elif element.attrib["id"] == "education":
             for e in edu:
                 eduinfo, edudesc = edu2html(e)
