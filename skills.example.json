@@ -1,0 +1,18 @@
+{
+    "Programming & Software": {
+        "Category A": ["detail 1", "detail 2", "[detail 3 with highlight]", "[detail 4]"],
+        "Category B": ["detail 1", "detail 2", "[detail 3 with highlight]", "[detail 4]"],
+        "Category C": ["detail 1", "detail 2", "[detail 3 with highlight]", "[detail 4]"]
+    },
+    "Personal skills": {
+        "Category A": ["detail 1", "detail 2", "[detail 3 with highlight]", "[detail 4]"],
+        "Category B": ["detail 1", "detail 2", "[detail 3 with highlight]", "[detail 4]"],
+        "Category C": ["detail 1", "detail 2", "[detail 3 with highlight]", "[detail 4]"]
+    },
+    "Languages": {
+        "Language A": ["Skill level A"],
+        "Language B": ["Skill level B"],
+        "Language C": ["Skill level C"]
+    },
+    "Other": {"Special skill A": ["detail"]}
+}

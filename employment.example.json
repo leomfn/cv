@@ -1,0 +1,66 @@
+[
+    {
+        "employer": "Company A",
+        "position": "Position Title A",
+        "timeframe": "Jan. 2020 to Today",
+        "location": "City A",
+        "description": [
+            "Description of important tasks A",
+            "Description of important tasks B",
+            "Description of important tasks C"
+        ],
+        "contact": {
+            "name": "Firstname Lastname",
+            "phone": "00000 1111 22",
+            "mail": "reference.contact@company.ext"
+            }
+    },
+    {
+        "employer": "Company B",
+        "position": "Position Title B",
+        "timeframe": "Jan. 2018 to Jan 2020",
+        "location": "City B",
+        "description": [
+            "Description of important tasks A",
+            "Description of important tasks B",
+            "Description of important tasks C"
+        ],
+        "contact": {
+            "name": "Firstname Lastname",
+            "phone": "00000 1111 22",
+            "mail": "reference.contact@company.ext"
+            }
+    },
+    {
+        "employer": "Company C",
+        "position": "Position Title C",
+        "timeframe": "Jan. 2016 to Jan. 2018",
+        "location": "City C",
+        "description": [
+            "Description of important tasks A",
+            "Description of important tasks B",
+            "Description of important tasks C"
+        ],
+        "contact": {
+            "name": "Firstname Lastname",
+            "phone": "00000 1111 22",
+            "mail": "reference.contact@company.ext"
+            }
+    },
+    {
+        "employer": "Company D",
+        "position": "Position Title D",
+        "timeframe": "Jan. 2002 to 2016",
+        "location": "City D",
+        "description": [
+            "Description of important tasks A",
+            "Description of important tasks B",
+            "Description of important tasks C"
+        ],
+        "contact": {
+            "name": "Firstname Lastname",
+            "phone": "00000 1111 22",
+            "mail": "reference.contact@company.ext"
+            }
+    }
+]

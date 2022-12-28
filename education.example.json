@@ -1,0 +1,22 @@
+[
+    {
+        "institute": "University A",
+        "program": "M.Sc. ABC Engineering",
+        "timeframe": "Jan. 2000 bis Jan. 2002",
+        "location": "City",
+        "description": [
+            "Description A",
+            "Description B"
+        ]
+    },
+    {
+        "institute": "University B",
+        "program": "B.Sc. ABC Engineering",
+        "timeframe": "Jan. 1997 bis Jan. 2000",
+        "location": "City",
+        "description": [
+            "Description C",
+            "Description D"
+        ]
+    }
+]

@@ -4,3 +4,4 @@
 !*.test*
 print.html
 *.pyc
+!*example*
