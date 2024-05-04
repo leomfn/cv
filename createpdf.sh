@@ -12,6 +12,11 @@ PDFFILE="resume.pdf"
 # Replace variables in html file
 (envsubst < $HTMLFILE) > print.html
 
+# Create .venv if it doesn't exist
+if [ ! -d .venv ]; then
+    python3 -m venv .venv
+fi
+
 # Run Python to insert content
 source ./.venv/bin/activate
 python3 main.py
